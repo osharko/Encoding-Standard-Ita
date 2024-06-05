@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  web:
+    image: nginx:alpine
+    volumes:
+      - ./2020_X265.html:/usr/share/nginx/html/index.html
+    ports:
+      - 80:80

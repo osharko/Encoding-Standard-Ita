@@ -264,56 +264,52 @@ Standard per High Definition x264 e Ultra High Definition x265
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.7.3) In rare situations, 29.97 / 59.940 fps sources must be restored to 25 fps.
 <br /></p>
 <p><br /><not_translated>7) [ Video Codec ]</not_translated>
-<br />&nbsp;&nbsp;&nbsp;&nbsp;7.1) Video must be:
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.1) H.265/MPEG-H HEVC encoded with x265 10-bit for 720p/1080p HDR and 2160p SDR/HDR content.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.2) H.264/MPEG-4 AVC encoded with x264 8-bit for 720p and 1080p SDR content.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.3) Custom builds of x264/x265 are allowed and must be based off the current x264/x265 codebase. e.g. tMod, kMod.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;7.2) x264/x265 headers must remain intact and must not be modified or removed.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;7.3) x264/x265 must be kept up to date, with a maximum allowance, or grace period, of 60 days before groups are required
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to update to the latest revision.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.1) The official x264 git repository is the only reference for determining the current revision:
+<br />&nbsp;&nbsp;&nbsp;&nbsp;7.1) Video devono essere:
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.1) H.265/MPEG-H HEVC encodati con x265 10-bit per contenuti 720p/1080p HDR e 2160p SDR/HDR.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.2) H.264/MPEG-4 AVC encodati con x264 8-bit per contenuti 720p e 1080p SDR.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.3) Configurazioni personalizzate di x264/x265 sono consentite e devono essere basate sul corrente codice di x264/x265. es. tMod, kMod.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;7.2) Intestazioni di x264/x265 devono restare intatti e non devono essere modificati o rimossi.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;7.3) x264/x265 devono restare aggiornati, con una tolleranza massima, di 60 giorni prima che i gruppi debbano aggiornarsi
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;all'ultima revisione.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.1) Il repository git x264 ufficiale è l'unica modo per determinare l'attuale revisione:
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://code.videolan.org/videolan/x264/tree/stable
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.2) The official x265 git repository is the only reference for determining the current revision:
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.2) Il repository git x265 ufficiale è l'unica modo per determinare l'attuale revisione:
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://bitbucket.org/multicoreware/x265/wiki/Home
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.2.1) Until such a time as MulticoreWare implement official revisional building, 3rd party builds (e.g. self-
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;compiles, http://msystem.waw.pl/x265 or https://builds.x265.eu) can be used and must be kept up to date
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;respecting 7.3.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.3) The 60 day grace period must only be applied at pre time, not the tagged encoded date.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.4) The grace period is only applicable to the revision preceding the latest update and does not reset active grace
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;periods of preceding revisions.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. 2016-01-01: Revision A is used.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016-01-02: Revision B is committed, 60-day grace period begins for revision A.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016-01-05: Revision C is committed, 60-day grace period begins for revision B.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016-03-02: Revision A is no longer allowed, Revision B or C may be used.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016-03-05: Revision B is no longer allowed, Revision C must be used.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;7.4) Segmented encoding is not allowed.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;7.5) Constant Rate Factor (--crf) must be used.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.5.1) Decimal values may be used.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.5.2) Starting with an initial value of 16 or 14 (for especially compressible sources) for 2160p and 17 for 720p and
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1080p is recommended.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;7.6) While the encoded video stream bitrate exceeds x percent (where x is defined below) of the source video stream
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bitrate, the CRF value must be incremented by 1 or 0.1, until it does not.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.6.1) 30% for 720p.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.6.2) 60% for 1080p.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.6.3) 70% for 2160p.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;7.7) Use of 2-pass is accepted for all resolutions. However, this method should be used only in extreme cases and not as a
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;primary replacement for CRF methods. e.g. If the source contains an excessive amount of grain or black and white
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scenes.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.7.1) The NFO must provide sufficient detailed evidence of 2-pass producing a visual improvement, bitrate or file
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size advantage over CRF in regards to the source used.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. Source has heavy grain throughout, which required the use of 2-pass to remain transparent at a reasonable
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bitrate. Included in the proof directory is test encodes of some troublesome areas at CRF and 2-pass
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showing a substantial improvement in quality at a more reasonable bitrate. CRF needs 6.5GB to stay
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent 2-pass only needed 4GB is detailed evidence.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. The source was grainy so 2-pass was used is NOT detailed evidence.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.7.2) Exceeding CRF 24 on any resolution is a good indication to consider the use of 2-pass.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.7.3) 2-pass encodes must follow the percentage values in 7.6, it is recommended to target the maximum value allotted
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and work down.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;7.8) Exceeding the percentage values in 7.6 is allowed, but very detailed justification must be included in the NFO.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. 720p encoded at CRF 13 resulting in an encode 50% of the source, this value was picked as the sourced content
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;had a lot of strobing effects (e.g. 1m10s-15m30s) and confetti scenes (e.g. 20m55s-50m60s) which compressed
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;poorly and required a higher bitrate to maintain transparency. Proof directory contains samples of these
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;troublesome scenes at 30% and 50% showing a substantial picture improvement.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.2.1) Finchè MulticoreWAre implementa la revisione ufficiale, i pacchetti di 3° parti (es. auto-compilate, http://msystem.waw.pl/x265 or https://builds.x265.eu)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;possono essere usate tenendolo debitamente aggiornate rispettando il punto 7.3 .
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.3) I 60 giorni di tolleranza devono essere applicati solo in anticipo, non alla data codificata con tag.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.4) Il periodo di tolleranza è applicamente solamente alla evisione precedente l'ultimo aggiornamento e non non ripristina
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i periodi attivi delle precedenti revisioni.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;es. 2016-01-01: Usata la revisione A.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016-01-02: Revisione B è stata committata committed, cominciano i 60 giorni di periodo di tolleranza per la revisione A.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016-01-05: Revisione C è stata committata committed, cominciano i 60 giorni di periodo di tolleranza per la revisione B.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016-03-02: Revisione A non è più consentita, le revisioni B o C devono essere usate.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016-03-05: Revisione B non è più consentita, la revisione C deve essere usata.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;7.4) Non è possibile encodare a spezzoni (loro sono inglesi e dicono così, noi abbiamo Boris e diciamo "A cazzo di cane"!).
+<br />&nbsp;&nbsp;&nbsp;&nbsp;7.5) Bisogna usare il Constant Rate Factor (--crf).
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.5.1) È possibile utilizzare valori decimali.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.5.2) Cominciare con un valore iniziale di 14/16 (per fonti particolamente comprimibili) per il 2160p e 17 è raccomandato per il 720p/1080p
+<br />&nbsp;&nbsp;&nbsp;&nbsp;7.6) Quando il bitrate del flusso video codificato eccede X percento (dove X è definito qui sotto) del bitrate del flusso video d'ingresso,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; il valore CRF deve essere incrementato di 1 o 0.1, finchè non lo raggiunge.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.6.1) 30% per il 720p.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.6.2) 60% per il 1080p.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.6.3) 70% per il 2160p.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;7.7) Utilizzo di un doppio passaggio è accettato per tutte le risoluzioni. Comunque, questo metodo dovrebbe essere usato solo in casi estremi e non come un
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rimpiazzo primario per i metodi CRF. es. Se la fonte contiene un contenuto eccessivo di grana o scene bianche e nere.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.7.1) L' NFO deve provvedere evidenze dettagliate del doppio passaggio producendo un miglioramento visivo, di bitrate o dimensione del file
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oltre al CRF rispetto alla fonte utilizzata in regards to the source used.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;es. La fonte un flusso molto granuloso, che richiede l'utilizzo di un doppio passaggio per restare trasparente a un bitrate accettabile.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nella cartella delle prove è incluso una prova di codifica di alcune aree problematiche a CRF a due passaggi, mostrando
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;un sostanziale miglioramento nella qualità a un bitrate più ragionevole. CRF necessità di 6.5GB per essere trasparente
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; il doppio passaggio necessita di soli 4GB per una prova dettagliata.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;es. La fonte era granulosa, quindi è stato utilizzato il doppio passaggio NON come prova dettagliata.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.7.2) Eccedere il CRF 24 ad ogni risoluzione è un buon indicatore per considerare il doppio passaggio.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.7.3) La codifica in doppio passaggio deve seguire i valori percentuale di 7.6, è raccomandato di puntare al valore massimo assegnato e di ridurlo
+<br />&nbsp;&nbsp;&nbsp;&nbsp;7.8) Eccedere la percentuale di 7.6 è permesso, ma una giustificazione molto dettagliata deve essere inclusa nell'NFO.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;es. una codifica 720p a CRF 13 risulta nel 50% dell'originale, questo valore è stato preso in quanto il contenuto sorgente
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aveva molti effetti stroboscopici (es. 1m10s-15m30s) e scene con coriandoli (es. 20m55s-50m60s) che veniva mal compresse
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e richiedevano un bitrate più alto per mantenere la trasparenza. La cartella delle prove conteiene esempi di queste scene problematiche
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a 30% e 50% mostrando un sostanziale miglioramento.
 <br />&nbsp;&nbsp;&nbsp;&nbsp;7.9) Using unreasonably high CRF values or low target bitrates with 2-pass for the source content is considered a
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;technical flaw.
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. Producing a 1080p encode at 50% of the source bitrate, offering no justification in the NFO and having poor
@@ -375,17 +371,17 @@ Standard per High Definition x264 e Ultra High Definition x265
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the source value is undefined.
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.23.4.2.1) Master Display and Max CL values must be taken from the whole concatenated source, not a partial
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source. e.g. the first m2ts file.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;7.24) Any form of tone-mapping (e.g. HDR to SDR, DV to SDR, HDR10Plus to SDR) is not allowed, use INTERNAL.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;7.25) HDR, DV and HDR10Plus must only be released at the source resolution, except in cases when 4.5.3 applies.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. Source is 2160p and may only be released at 2160p, not 1080p or 720p.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. Source is 1080p and may only be released at 1080p, not 720p.
-<br />&nbsp;&nbsp;&nbsp;&nbsp;7.26) Suggested command line:
+<br />&nbsp;&nbsp;&nbsp;&nbsp;7.24) Ogni forma di tone-mapping (es. HDR a SDR, DV a SDR, HDR10Plus a SDR) non è permessa, usa INTERNAL(??).
+<br />&nbsp;&nbsp;&nbsp;&nbsp;7.25) HDR, DV e HDR10Plus devono essere rilasciati solamente alla loro risoluzione nativa, eccetto i casi in cui si applica 4.5.3.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. La sorgentte è 2160p e può solo essere rilasciata a 2160p, non 1080p o 720p.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. La sorgente è 1080p e può solo essere rilasciata a 1080p, non 720p.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;7.26) Suggerimenti per comandi da terminale:
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.26.1) x264 --preset slower --level ## --crf ##
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.26.1.1) Optional tweaks: --no-mbtree --no-fast-pskip --no-dct-decimate
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.26.1.1) Miglioramenti opzionali: --no-mbtree --no-fast-pskip --no-dct-decimate
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.26.2) x265 --high-tier --repeat-headers --aud --hrd --preset slow --level-idc ## --crf ## --range ## --colorprim ##
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--transfer ## --colormatrix ## --chromaloc ##
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.26.2.1) If HDR append: --hdr10 --hdr10-opt --master-display ## --max-cll ##
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.26.2.2) Optional tweaks: --no-cutree --no-open-gop --no-sao --pmode --aq-mode 4
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.26.2.1) Se con HDR, aggiungici: --hdr10 --hdr10-opt --master-display ## --max-cll ##
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.26.2.2) Miglioramenti opzionali: --no-cutree --no-open-gop --no-sao --pmode --aq-mode 4
 <br /></p>
 <p><br /><not_translated>8) [ Audio ]</not_translated>
 <br />&nbsp;&nbsp;&nbsp;&nbsp;8.1) Lossless tracks include, but are not limited to: DTS:X, TrueHD Atmos, DTS-HD MA, TrueHD, LPCM.
