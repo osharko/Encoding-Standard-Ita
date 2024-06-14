@@ -46,47 +46,33 @@ Laddove possibile l'ho sostituita con la parola distribuzione, ma altre volte il
     4. Elementi non-RETAIL devono usare il tag appropriato es. LINE.
 
 
-~~3. [ Video ]
-    1. Transcoding of transcoded or lossy material is not allowed.
-    2. Multiple video tracks are not allowed.
-    3. Must be free from technical flaws.
-        1. Technical flaws include, but are not limited to: sync issues, interlacing, lack of IVTC, bad aspect ratio,
-               invalid resolution, unrelated footage, warnings, glitches not present on source, under-crop, over-crop.
-    4. Dupes based on source type or disc format are not allowed.
-    5. Left-eye or right-eye video streams from a 3D source must not be used for a 2D release.
-        1. Except for titles that were released exclusively in 3D and that have no upcoming 2D disc planned.
-        2. Except for cases when 1 applies and there is no 2D source available or planned to be released.
-    6. Single features must not be split across multiple files.
-        1. Sources where the opening credits and closing credits span multiple discs must be encoded and released as a
-               single release.
-               e.g. Disc 1: Opening credits and first 105 minutes of feature.
-                    Disc 2: Remaining 122 minutes of feature and closing credits.
-                    Release: A single 227 minute feature.
-        2. Sources with multiple episodes, parts etc., that are in a single video file, must be split into individual
-               releases if there is a clear delineation between them, such as credits.
-               e.g. Disc contains 10 episodes in a single m2ts file with all episodes strung together with credits between
-                    every episode, each episode must be released separately.
-    7. Non-feature footage including, but not limited to: credits, previously on, intertitles must not be removed or encoded
-         separately.
-        1. In situations of a progressive feature containing interlaced non-feature footage, the interlaced footage may be
-               left interlaced, or only that footage must be deinterlaced.
-               e.g. Only the credits are interlaced, you may leave them interlaced or only apply a deinterlacer to the
-                    credits, not the entire video.
-    8. Unrelated footage must be removed.
-        1. Unrelated footage includes, but is not limited to: content warnings, studio worksheets, test screens, piracy
-               warnings.
-    9. English-spoken features must not contain foreign overlays for relevant on-screen information.
-        1. Relevant on-screen information includes, but is not limited to: location titles, hardcoded subtitles,
-               introduction text, or any other information essential to the plot of the feature.
-        2. Non-relevant on-screen information includes: opening credits, movie title, closing credits.
-        3. For discs where relevant on-screen information is included in the form of English subtitles instead of
-               overlays, these subtitles must be included as a forced track (see 12). If the disc does not include them in
-               English, it is not allowed to omit them and release the feature without them, as it is still considered
-               relevant information.
-    10. Using multiple retail video sources of the same movie is allowed and must not be encoded separately. Each source and
-          what content came from which must be noted in the NFO.
-          e.g. Feature from German BluRay with credits from American BluRay to avoid German translated credits, as the German
-               BluRay had better quality for the feature.~~
+3. [ Video ]
+    1. La transcodifica di transcodifica o di materiale lossy (senza perdita di qualità/dati) non è permessa.
+    2. Tracce video multiple non sono permesse.
+    3. Deve essere esente da difetti tecnici.
+        1. I difetti tecnici includono, ma non sono limitati a: problemi di sincronizzazione, interlacciamento, mancanza di IVTC, proporzioni errate, risoluzione non valida, filmati non correlati, avvisi, difetti non presenti nell'origine, crop mal fatti.
+    4. Non sono consentiti duplicati basati sul tipo di sorgente o sul formato del disco.
+    5. Non utilizzare occhio destro o sinistro di un contenuto 3D per una release 2D.
+        1. Almenochè il titolo non è stato rilasciato solamente in 3D e non ci siano piani per il rilascio in 2D.
+        2. Almeochè per il caso in cui si applichi il punto 1 e non ci siano fonti 2D disponibili o comunque non siano state annunciate per l'usicta.
+    6. Le singole funzionalità non devono essere suddivise in più file.
+        1. Le fonti in cui i titoli di apertura e di chiusura si estendono su più dischi devono essere codificate e rilasciate come una singola release.
+               es.  Disco 1: Titoli di testa e primi 105 minuti di lungometraggio.
+                    Disco 2: 122 minuti rimanenti di lungometraggi e titoli di coda.
+                    Release: Una singola release da 227 minuti.
+        2. Le fonti con più episodi, parti ecc., che si trovano in un singolo file video, devono essere suddivise in singole rilasci se esiste una chiara delimitazione tra loro, come i crediti.
+               es. Il disco contiene 10 episodi in un singolo file m2ts con tutti gli episodi messi insieme con i crediti tra ogni episodio, ogni episodio deve essere pubblicato separatamente.
+    7. Sezioni aggiuntive che includano ma non si limitino a: crediti, previously on, didascalie non devono essere rimosse o codificate separatemente.
+        1. In situazioni di una funzione progressiva contenente una sezione aggiuntiva interlacciata, il metraggio interlacciato può essere lasciato interlacciato oppure solo quel metraggio deve essere deinterlacciato.
+               es. Solo i titoli di coda sono interlacciati, puoi lasciarli interlacciati o applicare un deinterlacciatore solo ai titoli di coda, non all'intero video.
+    8. I filmati non correlati devono essere rimossi.
+        1. I filmati non correlati includono, a titolo esemplificativo: avvisi sui contenuti, fogli di lavoro dello studio, schermate di prova, avvisi di pirateria.
+    9. Le funzionalità in lingua inglese non devono contenere sovrapposizioni straniere per informazioni rilevanti sullo schermo.
+        1. Le informazioni rilevanti sullo schermo includono, ma non sono limitate a: titoli di luoghi, sottotitoli codificati, testo introduttivo o qualsiasi altra informazione essenziale per la trama del film.
+        2. Le informazioni sullo schermo non rilevanti includono: titoli di apertura, titolo del film, titoli di chiusura.
+        3. Per i dischi in cui le informazioni rilevanti sullo schermo sono incluse sotto forma di sottotitoli in inglese anziché in sovrimpressione, questi sottotitoli devono essere inclusi come traccia forzata (vedere capitolo 12). Se il disco non li include in inglese, non è consentito ometterli e rilasciare la funzione senza di essi, poiché sono comunque considerate informazioni rilevanti.
+    10. È consentito l'utilizzo di più sorgenti video di vendita al dettaglio dello stesso film e non deve essere codificato separatamente. Ciascuna fonte e il contenuto da cui proviene deve essere annotato nella NFO.
+          es. Funzionalità del BluRay tedesco con crediti del BluRay americano per evitare crediti tradotti in tedesco, poiché il BluRay tedesco aveva una qualità migliore per la funzionalità.
 
 
 ~~4. [ Resolution / Aspect Ratio ]
